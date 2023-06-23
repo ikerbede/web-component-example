@@ -4,7 +4,8 @@ export class PizzaDetailsComponent extends HTMLElement {
     fetch('./pizza-details.component.html')
       .then((response: Response) => response.text())
       .then((template: string) => {
-        document.write(template);
+        console.log('template: ', template);
+        document.body.insertAdjacentHTML('afterbegin', template);
         const templateElt = document.getElementById(
           'pizza-details-template'
         ) as HTMLTemplateElement;
